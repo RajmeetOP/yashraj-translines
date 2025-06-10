@@ -566,7 +566,7 @@
           <h3>Safe & Secure Goods Handling</h3>
         </div>
         <div class="service-card">
-          <i class="fas fa-rupee-sign"></i>
+          <span style="font-size: 50px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 25px; display: block; transition: transform 0.3s ease;">₹</span>
           <h3>Competitive Freight Rates</h3>
         </div>
       </div>
@@ -652,8 +652,19 @@
     serviceCards.forEach((card, index) => {
       card.style.animationDelay = `${index * 0.1}s`;
     });
+
+    // Add hover effect to rupee symbol
+    const rupeeSymbol = document.querySelector('.service-card span');
+    if (rupeeSymbol) {
+      rupeeSymbol.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.2) rotate(10deg)';
+      });
+      
+      rupeeSymbol.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1) rotate(0deg)';
+      });
+    }
   </script>
 
 </body>
 </html>
-
